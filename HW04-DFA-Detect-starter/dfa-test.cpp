@@ -174,11 +174,11 @@ TEST(fn5, 1){
 }
 
 TEST(fn5, 2){
-  EXPECT_EQ( fn5("abcba"), true);
+  EXPECT_EQ( fn5("abbba"), true);
 }
 
 TEST(fn5, 3){
-  EXPECT_EQ( fn5("aabbcc"), false);
+  EXPECT_EQ( fn5("aabbb"), false);
 }
 
 TEST(fn5, 4){
