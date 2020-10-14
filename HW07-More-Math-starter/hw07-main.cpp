@@ -16,10 +16,10 @@ int main(){
   while(input != "exit"){
     if(p.parse(input)){
       cout << "ACCEPTED" << endl;
-      cout << p.numNodes() << " nodes in the tree." << endl;
+      cout << p.nodeCount() << " nodes in the tree." << endl;
       cout << "Value: " << p.eval() << endl;
     }else{
-      cout << "Not accepted."
+      cout << "Not accepted.";
     }
     cout << ">";
     getline(cin, input);
