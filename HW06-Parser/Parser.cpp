@@ -22,6 +22,7 @@ bool Parser::parse(string s){
   return root != NULL;
 }
 
+
 void Parser::trimL(string &s){
   if(s.length() > 0 && s[0] == ' '){
     s = s.substr(1);
@@ -36,24 +37,27 @@ void Parser::trimR(string &s){
   }
 }
 
-// Exp -> Exp + Exp | Exp - Exp | (Exp) | Val 
+// Exp -> Exp + Exp | Exp - Exp | (Exp) | Val
 // Check ( first as there may be + or - inside it
 Node* Parser::expr(string s){
   trimL(s);
   trimR(s);
-
+ 
   if(s.length() == 0)return NULL;
-
+  Node* v = NULL;
   // Paren
-  Node* v = expr(s.substr(1,s.length()-2));
-  if(s[0] == '(' && s[s.length() - 1] == ')' && v != NULL){
-    return v;
+  if(s[0] == '(' && s[s.length() - 1] == ')'){
+    v = expr(s.substr(1,s.length()-2));
+    if(v){
+      //cout << "Paren:" << s << endl;
+      return v;
+    }
   }
   
   // Plus
   size_t pos = s.find("+");
   while(pos != string::npos){
-    //cout << "Found + [" << s.substr(0,pos) << "][" << s.substr(pos+1) << "]" << endl;
+    //cout << "Found + [" << s.substr(0,pos) << "][" << s.substr(pos+1) << "]" << s << endl;
     Node* v_left = expr(s.substr(0,pos));
     Node* v_right = expr(s.substr(pos+1));
     if( v_left && v_right) return new Op("+", v_left, v_right);
