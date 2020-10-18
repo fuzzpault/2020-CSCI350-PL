@@ -85,7 +85,7 @@ TEST(assignment, 3){
 TEST(assignment, 4){
   Parser s;
   EXPECT_EQ( s.eval("a = 5"), 5);
-  EXPECT_EQ( s.eval("b = 50"), 5);
+  EXPECT_EQ( s.eval("b = 50"), 50);
   EXPECT_EQ( s.eval("a + b + 1"), 56);
 }
 
@@ -93,7 +93,7 @@ TEST(assignment, 5){
   Parser s;
   EXPECT_EQ( s.eval("a = 4 + 1"), 5);
   EXPECT_EQ( s.eval("a + 1"), 6);
-  EXPECT_EQ( s.eval("a = 6"), 5);
+  EXPECT_EQ( s.eval("a = 6"), 6);
   EXPECT_EQ( s.eval("a + 1"), 7);
 }
 
@@ -101,14 +101,14 @@ TEST(assignment, 6){
   Parser s;
   EXPECT_EQ( s.eval("a = 4 + 1"), 5);
   EXPECT_EQ( s.eval("a * a"), 25);
-  EXPECT_EQ( s.eval("a = 6"), 5);
+  EXPECT_EQ( s.eval("a = 6"), 6);
   EXPECT_EQ( s.eval("a + 1"), 7);
 }
 
 TEST(assignment, 7){
   Parser s;
   EXPECT_EQ( s.eval("a = 4 + 1"), 5);
-  EXPECT_EQ( s.eval("b + 1"), 0);
+  EXPECT_EQ( s.eval("b + 1"), 1);
 }
 
 TEST(assignment, 8){
