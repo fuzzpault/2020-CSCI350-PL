@@ -12,9 +12,9 @@ add a b c = a + b + c + 1
 myrepeat :: String -> String
 myrepeat s = s ++ s
 
-first :: [Int] -> [Int]
+first :: [Int] -> Int
 first (x:y:xs) = x
-first [] = [4]
+first [] = 4
 
 -- Decreasing values in a list
 counter :: Int -> [Int]
