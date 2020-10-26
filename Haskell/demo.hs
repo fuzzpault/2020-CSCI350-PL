@@ -52,3 +52,13 @@ whatGrade grade m | grade < 65 = "F" ++ m
 
 
 bob = [('g',6), ('j',9)]
+
+box3 = ["xxx","xxx","xxx"]
+
+-- Send a picture to pretty and it will print it out with new lines.
+pretty :: [String] -> IO ()
+pretty x = putStrLn (prettyHelp x)
+
+prettyHelp :: [String] -> String
+prettyHelp [] = ""
+prettyHelp (x:xs) = x ++ "\n" ++ prettyHelp xs
