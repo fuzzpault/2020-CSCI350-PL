@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Demo JavaScript</title>
+        <script type="text/javascript">
+            //alert("Bob!");
+            var secret = 0;
+            function sayHi(){
+                //alert("More here");
+                console.log("Secret: " + secret)
+            }
+            
+            function clickme(){
+                secret++;
+                console.log("Secret: " + secret)
+            }
+            
+            function changetext(){
+                var p = document.getElementsByTagName("p")
+                var parray = Array.prototype.slice.call(p)
+                parray.forEach(element => element.innerHTML = element.innerHTML + " bob ")
+                
+                var thisone = document.getElementById("thisone")
+                thisone.style.color = "red"
+            }
+            
+        </script>
+    </head>
+    <body onload="sayHi()">
+        <h1>Javascript Demo</h1>
+        <button onclick="clickme()">Click me!</button>
+        <button onclick="changetext()">Change text.</button>
+        
+        <p>This is a new paragraph.</p>
+        <hr>
+        <p id="thisone">Another paragraph</p>
+        <hr>
+        <p>Another paragraph</p>
+
+    </body>
+    
+</html>
