@@ -1,0 +1,19 @@
+HW 08 - Assignment & Variables
+
+Part 1 Solution
+
+Add variables and assignment to our HW 07 BNF.
+
+
+<assign> -> <var> = <assign>
+          <expr>
+<expr> -> <expr> + <term>
+          <expr> - <term>
+          <var> = <expr>
+          <term>
+<term> -> <term> * <factor>
+          <term> / <factor>
+          <factor>
+<factor> -> (<expr>) | <digit> | <var>
+<digit> -> 0 | 1 | … 9| <digit><digit>
+<var> -> a | b | .. z | <var><var>
