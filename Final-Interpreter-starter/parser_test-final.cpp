@@ -32,19 +32,6 @@ TEST(semi_parse, 3){
   EXPECT_EQ( s.parse("5;3;2;8+3"), true);
 }
 
-/* ------------------------------------------------ */
-
-TEST(semi_node_count, 0){
-  Parser s;
-  s.parse("5;3");
-  EXPECT_EQ( s.nodeCount(), 3);
-}
-
-TEST(semi_node_count, 1){
-  Parser s;
-  s.parse("5+1;3+2;4");
-  EXPECT_EQ( s.nodeCount(), 8);
-}
 
 
 
